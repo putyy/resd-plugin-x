@@ -1,0 +1,27 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://x.com/i/api/graphql/example/TweetDetail?variables=%7B%7D",
+      "host": "x.com",
+      "path": "/i/api/graphql/example/TweetDetail?variables=%7B%7D",
+      "headers": {
+        "User-Agent": ["Fixture Browser"]
+      }
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json"]
+      },
+      "contentType": "application/json",
+      "body": "{\"data\":{\"thread\":{\"tweet_results\":{\"result\":{\"__typename\":\"TweetWithVisibilityResults\",\"tweet\":{\"__typename\":\"Tweet\",\"rest_id\":\"1900000000000000003\",\"core\":{\"user_results\":{\"result\":{\"core\":{\"name\":\"GIF Author\"},\"legacy\":{\"screen_name\":\"gif_author\"}}}},\"note_tweet\":{\"note_tweet_results\":{\"result\":{\"text\":\"详情页中的动态 GIF\"}}},\"legacy\":{\"full_text\":\"较短的后备文本\",\"extended_entities\":{\"media\":[{\"id_str\":\"1900000000000000103\",\"type\":\"animated_gif\",\"media_url_https\":\"https://pbs.twimg.com/tweet_video_thumb/example.jpg\",\"original_info\":{\"width\":480,\"height\":480},\"video_info\":{\"variants\":[{\"bitrate\":0,\"content_type\":\"video/mp4\",\"url\":\"https://pbs.twimg.com/tweet_video/example.mp4\"}]}}]}}}}}}}}"
+    }
+  },
+  "expected": {
+    "resourceCount": 1,
+    "resourceUrls": ["https://pbs.twimg.com/tweet_video/example.mp4"],
+    "decision": "continue"
+  }
+}

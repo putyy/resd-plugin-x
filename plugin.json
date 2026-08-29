@@ -1,0 +1,139 @@
+{
+  "id": "com.putyy.x",
+  "name": "X",
+  "author": {
+    "name": "putyy",
+    "url": "https://github.com/putyy"
+  },
+  "locales": {
+    "zh-CN": {
+      "name": "X 视频",
+      "description": "从 X 列表页和推文详情页提取可直接下载的 MP4 视频。"
+    },
+    "zh": {
+      "name": "X 视频",
+      "description": "从 X 列表页和推文详情页提取可直接下载的 MP4 视频。"
+    },
+    "en": {
+      "name": "X Video",
+      "description": "Extracts directly downloadable MP4 videos from X timelines and post detail pages."
+    }
+  },
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "runtime": "javascript",
+  "entry": "main.js",
+  "priority": 1750,
+  "permissions": {
+    "domains": [
+      "x.com",
+      "*.x.com",
+      "twitter.com",
+      "*.twitter.com",
+      "video.twimg.com",
+      "pbs.twimg.com"
+    ],
+    "capabilities": [
+      "observe-response",
+      "read-response-body",
+      "emit-resource"
+    ],
+    "bodyLimit": 33554432
+  },
+  "match": [
+    {
+      "stage": "response",
+      "host": "x.com",
+      "path": "/i/api/*",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "*.x.com",
+      "path": "/i/api/*",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "*.x.com",
+      "path": "/graphql/*",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "twitter.com",
+      "path": "/i/api/*",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "*.twitter.com",
+      "path": "/i/api/*",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "video.twimg.com",
+      "path": "*.mp4*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "video.twimg.com",
+      "path": "*.m3u8*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "video.twimg.com",
+      "path": "*.m4s*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "pbs.twimg.com",
+      "path": "*.mp4*",
+      "readBody": false
+    }
+  ],
+  "resourceKinds": [
+    {
+      "id": "media.video",
+      "icon": "video",
+      "color": "#0f1419",
+      "locales": {
+        "zh": {"name": "X 视频"},
+        "en": {"name": "X Video"}
+      }
+    }
+  ],
+  "settingsSchema": {
+    "type": "object",
+    "properties": {
+      "quality": {
+        "type": "string",
+        "enum": ["best", "lowest"],
+        "default": "best",
+        "x-locales": {
+          "zh": {
+            "name": "下载画质",
+            "description": "选择推文提供的最高或最低码率 MP4 版本。"
+          },
+          "en": {
+            "name": "Download quality",
+            "description": "Select the highest or lowest bitrate MP4 variant offered by the post."
+          }
+        },
+        "x-enumLabels": {
+          "zh": {"best": "最高可用", "lowest": "最低可用"},
+          "en": {"best": "Best available", "lowest": "Lowest available"}
+        }
+      }
+    }
+  }
+}

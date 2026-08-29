@@ -1,0 +1,27 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://video.twimg.com/amplify_video/1900000000000000001/vid/avc1/3000/6000/720x1280/example.m4s",
+      "host": "video.twimg.com",
+      "path": "/amplify_video/1900000000000000001/vid/avc1/3000/6000/720x1280/example.m4s",
+      "headers": {
+        "Origin": ["https://x.com"],
+        "Referer": ["https://x.com/"]
+      }
+    },
+    "response": {
+      "statusCode": 206,
+      "headers": {
+        "Content-Type": ["video/mp4"],
+        "Content-Length": ["410787"]
+      },
+      "contentType": "video/mp4"
+    }
+  },
+  "expected": {
+    "resourceCount": 0,
+    "decision": "continue"
+  }
+}

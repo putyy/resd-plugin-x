@@ -1,0 +1,30 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://x.com/i/api/graphql/example/HomeTimeline?variables=%7B%7D",
+      "host": "x.com",
+      "path": "/i/api/graphql/example/HomeTimeline?variables=%7B%7D",
+      "headers": {
+        "User-Agent": ["Fixture Browser"]
+      }
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"data\":{\"home\":{\"entries\":[{\"tweet_results\":{\"result\":{\"__typename\":\"Tweet\",\"rest_id\":\"1900000000000000001\",\"core\":{\"user_results\":{\"result\":{\"core\":{\"name\":\"Example Author\"},\"legacy\":{\"screen_name\":\"example_author\"}}}},\"legacy\":{\"full_text\":\"列表页中的示例视频 https://t.co/example\",\"extended_entities\":{\"media\":[{\"id_str\":\"1900000000000000101\",\"type\":\"video\",\"media_url_https\":\"https://pbs.twimg.com/ext_tw_video_thumb/1900000000000000101/pu/img/cover.jpg\",\"original_info\":{\"width\":1280,\"height\":720},\"video_info\":{\"duration_millis\":12345,\"variants\":[{\"content_type\":\"application/x-mpegURL\",\"url\":\"https://video.twimg.com/ext_tw_video/1900000000000000101/pu/pl/example.m3u8\"},{\"bitrate\":256000,\"content_type\":\"video/mp4\",\"url\":\"https://video.twimg.com/ext_tw_video/1900000000000000101/pu/vid/320x180/low.mp4?tag=12\"},{\"bitrate\":2176000,\"content_type\":\"video/mp4\",\"url\":\"https://video.twimg.com/ext_tw_video/1900000000000000101/pu/vid/1280x720/high.mp4?tag=12\"}]}}]}}}}},{\"tweet_results\":{\"result\":{\"__typename\":\"Tweet\",\"rest_id\":\"1900000000000000002\",\"legacy\":{\"full_text\":\"没有视频的普通推文\"}}}}]}}}"
+    }
+  },
+  "expected": {
+    "resourceCount": 1,
+    "resourceUrls": [
+      "https://video.twimg.com/ext_tw_video/1900000000000000101/pu/vid/320x180/low.mp4?tag=12",
+      "https://video.twimg.com/ext_tw_video/1900000000000000101/pu/vid/1280x720/high.mp4?tag=12"
+    ],
+    "decision": "continue"
+  }
+}
