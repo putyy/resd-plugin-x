@@ -2,7 +2,7 @@
 
 [中文](README.md) | [English](README-EN.md)
 
-`res-downloader` 的 X 视频插件，兼容旧 `twitter.com` 域名。
+[res-downloader](https://github.com/putyy/res-downloader) 的 X 视频插件，兼容旧 `twitter.com` 域名。
 
 ## 功能
 

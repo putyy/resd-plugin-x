@@ -2,7 +2,7 @@
 
 [中文](README.md) | [English](README-EN.md)
 
-An X video plugin for `res-downloader`, also supporting the legacy `twitter.com` domain.
+An X video plugin for [res-downloader](https://github.com/putyy/res-downloader), also supporting the legacy `twitter.com` domain.
 
 ## Features
 
