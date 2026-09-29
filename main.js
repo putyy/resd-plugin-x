@@ -263,7 +263,7 @@ function resourcesFromTweet(tweet, observation) {
     if (mediaItems.length > 1) title += " - " + String(index + 1).padStart(2, "0");
     var traits = [];
     if (tracks.length > 1) traits.push("multiTrack");
-    if (stringValue(media.type) === "animated_gif") traits.push("com.putyy.x:animatedGif");
+    if (stringValue(media.type) === "animated_gif") traits.push("official.x:animatedGif");
 
     resources.push({
       groupKey: "x:" + id + ":media:" + mediaID,
