@@ -19,7 +19,7 @@
       "description": "Extracts directly downloadable MP4 videos from X timelines and post detail pages."
     }
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiVersion": 1,
   "runtime": "javascript",
   "entry": "main.js",
